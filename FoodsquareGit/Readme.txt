@@ -1,7 +1,3 @@
--GitHub Account
-
-Freaqke
-Mofo121191!
 
 -how to get started
 
