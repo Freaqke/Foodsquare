@@ -24,18 +24,14 @@ namespace Foodsquare.Controllers
         [HttpPost]
         public ActionResult Login (string loginUsername, string loginPassword)
         {
-            Login login = new Login();
-            login.username = loginUsername;
-            login.password = loginPassword;
-
             UserLogic user = new UserLogic();
 
-            bool check = user.UserAuthentication(login.username.ToString(),login.password.ToString());
+            bool check = user.UserAuthentication(loginUsername, loginPassword);
 
             if (check == true)
             {
-                FormsAuthentication.SetAuthCookie(login.username, true);
-                Session["username"] = login.username.ToString();
+                FormsAuthentication.SetAuthCookie(loginUsername, true);
+                Session["username"] = loginUsername;
                 return RedirectToAction("Index", "Home");
             }
             else

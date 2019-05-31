@@ -10,11 +10,9 @@ namespace DAL
     {
         private string ConnectionString = "Server = mssql.fhict.local; Database = dbi301339; User Id = dbi301339; Password = Mofo121191!";
 
-        public SqlConnection Connect()
+        public string Connect()
         {
-
-            SqlConnection connection = new SqlConnection(this.ConnectionString);
-            return connection;
+            return ConnectionString;
         }
     }
 }
