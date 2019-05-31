@@ -1,0 +1,12 @@
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\bin\Debug\netstandard2.0\LAL.deps.json
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\bin\Debug\netstandard2.0\LAL.dll
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\bin\Debug\netstandard2.0\LAL.pdb
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\bin\Debug\netstandard2.0\DAL.dll
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\bin\Debug\netstandard2.0\DAL.pdb
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\obj\Debug\netstandard2.0\LAL.csprojResolveAssemblyReference.cache
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\obj\Debug\netstandard2.0\LAL.csproj.CoreCompileInputs.cache
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\obj\Debug\netstandard2.0\LAL.AssemblyInfoInputs.cache
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\obj\Debug\netstandard2.0\LAL.AssemblyInfo.cs
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\obj\Debug\netstandard2.0\LAL.csproj.CopyComplete
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\obj\Debug\netstandard2.0\LAL.dll
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\LAL\obj\Debug\netstandard2.0\LAL.pdb
