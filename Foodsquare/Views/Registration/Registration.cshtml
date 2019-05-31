@@ -4,5 +4,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Registration</h2>
+<div class="card border-secondary mb-3" style="max-width: 20rem;">
+    <div class="card-header">Register</div>
+    <div class="card-body">
+
+        <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Username</label>
+            <input type="text" class="form-control" placeholder="Username" id="registrationUsername">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="registrationPassword" placeholder="Password">
+        </div>               
+
+        <div class="form-group">
+            <label class="col-form-label" for="inputDefault">City</label>
+            <input type="text" class="form-control" placeholder="City" id="registrationCitye">
+        </div>
+        
+        <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Zipcode</label>
+            <input type="text" class="form-control" placeholder="5000AA" id="registrationZipcode">
+        </div>
+        
+        <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Phonenumber</label>
+            <input type="number" class="form-control" placeholder="0131234567" id="registrationPhone">
+        </div>
+        
+        <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Email</label>
+            <input type="email" class="form-control" placeholder="Example@example.com" id="registrationEmail">
+        </div>
+        
+        <button type="button" class="btn btn-primary">Submit</button>
+
+    </div>
+</div>
 
