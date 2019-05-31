@@ -187,3 +187,13 @@ E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\System.Xml
 E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\System.Xml.XPath.XDocument.dll
 E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\LAL.dll
 E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\LAL.pdb
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\DAL.dll
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\DAL.pdb
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\BouncyCastle.Crypto.dll
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\Google.Protobuf.dll
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\MySql.Data.dll
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\Google.Protobuf.xml
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\MySql.Data.xml
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\obj\Debug\Interop.VpnApiLib.dll
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\obj\Debug\Foodsquare.csproj.ResolveComReference.cache
+E:\Freaqke\Documents\FHICT\Foodsquare [S2H]\Foodsquare\Foodsquare\bin\System.Data.SqlClient.dll
