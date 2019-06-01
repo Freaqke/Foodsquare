@@ -4,14 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Web.UI.WebControls;
+using Foodsquare.Models;
+using LAL;
 
 namespace Foodsquare.Controllers
 {
     public class HomeController : Controller
     {
+  
         public ActionResult Index()
         {
-            return View();
+            Advertisement aModel = new Advertisement();
+            List<Advertisement> advertisements = aModel.GetAllAdvertisements();
+
+            return View(advertisements);
         }
 
         public ActionResult About()

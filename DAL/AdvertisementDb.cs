@@ -20,5 +20,20 @@ namespace DAL
 
             mySqlCommand.ExecuteNonQuery();
         }
+
+        public DataTable AdvertisementInformation()
+        {
+            Connection Db = new Connection();
+            SqlConnection connection = new SqlConnection(Db.Connect());
+            connection.Open();
+            SqlCommand mySqlCommand = new SqlCommand("GetAllAdvertisement", connection);
+            mySqlCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(mySqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
+            return dataTable;
+        }
     }
 }

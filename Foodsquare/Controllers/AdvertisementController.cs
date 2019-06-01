@@ -58,7 +58,7 @@ namespace Foodsquare.Controllers
                 AdvertisementLogic aLogic = new AdvertisementLogic();
                 ProductLogic pLogic = new ProductLogic();
 
-                aLogic.AdvertisementAdd(Session.SessionID, 1, AdvertisementProductTxt);
+                aLogic.AdvertisementAdd(Session["username"].ToString(), 1, AdvertisementProductTxt);
                 pLogic.ProductAdd(AdvertisementProductType, Convert.ToInt32(AdvertisementProductAmount), AdvertisementProductWeight, Convert.ToDateTime(AdvertisementProductExpDate), bytes , AdvertisementProductName);
 
                 return RedirectToAction("Index", "Home");
