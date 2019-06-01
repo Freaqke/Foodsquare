@@ -40,5 +40,13 @@ namespace Foodsquare.Controllers
             }
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

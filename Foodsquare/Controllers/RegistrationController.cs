@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using Foodsquare.Models;
 using LAL;
-using Microsoft.Ajax.Utilities;
 
 namespace Foodsquare.Controllers
 {
@@ -20,7 +19,8 @@ namespace Foodsquare.Controllers
         [HttpPost]
         public ActionResult Register (string registrationUsername, string registrationPassword, string registrationCity, string registrationZipcode, string registrationPhone, string registrationEmail)
         {
-            if (String.IsNullOrWhiteSpace(registrationUsername) || String.IsNullOrWhiteSpace(registrationPassword) ||
+            if (String.IsNullOrWhiteSpace(registrationUsername) || 
+                String.IsNullOrWhiteSpace(registrationPassword) ||
                 String.IsNullOrWhiteSpace(registrationCity) ||
                 String.IsNullOrWhiteSpace(registrationZipcode.ToString()) ||
                 String.IsNullOrWhiteSpace(registrationPhone.ToString()) ||
