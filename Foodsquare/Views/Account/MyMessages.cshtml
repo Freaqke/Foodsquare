@@ -1,4 +1,4 @@
-﻿
+﻿@using Foodsquare.Models;
 @{
     ViewBag.Title = "MyMessages";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -23,5 +23,19 @@
     </div>
 
 </div>
+
+@foreach (Message message in ViewBag.messageList)
+{
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+         <p class="text-info">@message.title</p>
+                <small class="text-muted">@Html.DisplayFor(modelItem => message.postDate )</small>
+            </div>
+            <p class="mb-1">@message.text</p>
+            <small class="text-muted">@message.sender</small>
+        </a>
+    </div>
+}
 
 

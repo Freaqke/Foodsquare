@@ -23,5 +23,21 @@ namespace DAL
 
             mySqlCommand.ExecuteNonQuery();
         }
+
+        public DataTable GetMessages(string receiver)
+        {
+            Connection Db = new Connection();
+            SqlConnection connection = new SqlConnection(Db.Connect());
+            connection.Open();
+            SqlCommand mySqlCommand = new SqlCommand("GetMessages", connection);
+            mySqlCommand.CommandType = CommandType.StoredProcedure;
+            mySqlCommand.Parameters.AddWithValue("@Receiver", receiver);
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(mySqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
+            return dataTable;
+        }
     }
 }

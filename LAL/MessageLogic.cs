@@ -21,5 +21,28 @@ namespace LAL
 
             connection.Add(id, sender,receiver, text, date, title);
         }
+
+        public List<MessageLogic> GetMessageList(string receiver)
+        {
+            MessageDb connection = new MessageDb();
+
+            DataTable dataTable = connection.GetMessages(receiver);
+
+            List<MessageLogic> list = new List<MessageLogic>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                MessageLogic message = new MessageLogic();
+                message.id = Convert.ToInt32(dr["Id"]);
+                message.sender = dr["Sender"].ToString();
+                message.receiver = dr["Receiver"].ToString();
+                message.text = dr["Text"].ToString();
+                message.date = Convert.ToDateTime(dr["Date"]);
+                message.title = dr["Title"].ToString();
+
+                list.Add(message);
+            }
+            return list;
+        }
     }
 }

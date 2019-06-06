@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Foodsquare.Models;
 
 namespace Foodsquare.Controllers
 {
@@ -21,7 +22,15 @@ namespace Foodsquare.Controllers
 
         public ActionResult MyMessages()
         {
+            var user = Session["username"].ToString();
+
+            Message aModel = new Message();
+            List<Message> aList = aModel.MessageList(user);
+
+            ViewBag.messageList = aList;
+
             return View();
         }
+
     }
 }

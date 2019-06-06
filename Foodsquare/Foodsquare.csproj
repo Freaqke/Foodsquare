@@ -173,6 +173,7 @@
     <Compile Include="Models\Advertisement.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -37,5 +37,6 @@ namespace Foodsquare.Controllers
             }
             return View("Message");
         }
+
     }
 }
