@@ -1,8 +1,33 @@
-﻿
+﻿@using Foodsquare.Models
 @{
     ViewBag.Title = "Message";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Message</h2>
+
+@model IEnumerable<Foodsquare.Models.Advertisement>
+
+<form action="MessageAdd" method="post">
+
+@foreach (Advertisement item in (List<Advertisement>)Session["AdverId"])
+    {
+        <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Title</label>
+            <input type="text" class="form-control" placeholder="Title" name="messageTitle">
+        </div>
+        <input class="form-control" id="disabledInput" type="text" placeholder="Sending message to @item.username" disabled="">
+
+        <row>
+            <div class="form-group">
+                <label name="CommentId" for="exampleTextarea"> Message </label>
+                <textarea class="form-control" name="messageText" rows="3"></textarea>
+            </div>
+            <button type="submit" value="" class="btn btn-primary">Submit</button>
+        </row>
+    }
+</form>
+
+    <h2> @Html.ViewData["message"]</h2>
+
 
