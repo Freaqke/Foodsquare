@@ -7,7 +7,8 @@ using System.Web.Mvc;
 using LAL;
 using System.IO;
 using Foodsquare.Models;
-using Microsoft.Ajax.Utilities;
+
+
 
 namespace Foodsquare.Controllers
 {
@@ -70,5 +71,41 @@ namespace Foodsquare.Controllers
             }
             return View("Advertisement");
         }
-    }
+
+   
+            public ActionResult Page(string ids)
+
+        {
+            Advertisement aModel = new Advertisement();
+
+            Session["AdverId"] = null;
+            
+                List<Advertisement> adver = aModel.AdvertisementId(Convert.ToInt32(ids));
+                Session["AdverId"] = adver;
+
+         
+            return View("Page");
+        }
+
+            [HttpPost]
+            public ActionResult CommentAdd(string AdvertisementId, string sender, string CommentText)
+            {
+                foreach (Advertisement item in (List<Advertisement>) Session["AdverId"])
+
+                {
+                    AdvertisementId = item.id.ToString();
+                }
+
+            if (String.IsNullOrWhiteSpace(CommentText))
+                {
+                    ViewData["message"] = "Write a comment before submiting";
+                }
+                else
+                {
+                    CommentLogic cLogic = new CommentLogic();
+                    cLogic.CommentAdd(Convert.ToInt32(AdvertisementId), Session["username"].ToString(),CommentText,DateTime.Now);
+                }
+                return View("Page");
+        }
+   }  
 }

@@ -8,33 +8,49 @@
     <h1>Foodsquare</h1>
     <p class="lead">An online market for those who don't want to waste consumables</p>
 </div>
-<row class="row">
-    @model IEnumerable<Foodsquare.Models.Advertisement>
-    @foreach (var item in Model)
 
+<row class="row">
+
+
+
+    @foreach (Advertisement item in ViewBag.ListAdvertisements)
     {
+
         var i = 0;
-            if (i % 3 == 0)
-            {
-                Html.Raw("</row><row>"); //End old row and start new one
-            }
-            i++;        
+        if (i % 3 == 0)
+        {
+            Html.Raw("</row><row>"); //End old row and start new one
+        }
+        i++;
+
+
+
         <div class="col-md-4">
             <div class="card border-secondary mb-3" style="max-width: 20rem;">
-                <div class="card-header">@item.username</div>
-                @{
-                    var base64 = Convert.ToBase64String(item.image);
-                    var imgscr = string.Format("data:image/gif; base64,{0}", base64);
-                }
-                <img style="height: 200px; width: 100%; display: block;" src='@imgscr'>
-                <div class="card-body">
-                    <h4 class="card-title">@item.name</h4>
-                    <p class="card-text">@item.description</p>
-                </div>
+                <a href='@Url.Action("Page", "Advertisement", new {ids = item.id})'>
+                    <label name="AdvertisementId" style="display: none">@item.id </label>
+                    <div class="card-header">@item.username </div>
+                    @{
+                        var base64 = Convert.ToBase64String(item.image);
+                        var imgscr = string.Format("data:image/gif; base64,{0}", base64);
+                    }
+
+
+                    <img style="height: 200px; width: 100%; display: block;" src='@imgscr' />
+
+
+                    <div class="card-body">
+                        <h4 class="card-title">@item.name</h4>
+                        <p class="card-text">@item.description</p>
+                    </div>
+                </a>
             </div>
         </div>
     }
+
 </row>
+
+
 
 
 

@@ -35,5 +35,20 @@ namespace DAL
 
             return dataTable;
         }
+        public DataTable AdvertisementId(int id)
+        {
+            Connection Db = new Connection();
+            SqlConnection connection = new SqlConnection(Db.Connect());
+            connection.Open();
+            SqlCommand mySqlCommand = new SqlCommand("GetAdvertisement", connection);
+            mySqlCommand.CommandType = CommandType.StoredProcedure;
+            mySqlCommand.Parameters.AddWithValue("@Id", id);
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(mySqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
+            return dataTable;
+        }
     }
 }

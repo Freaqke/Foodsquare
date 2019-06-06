@@ -22,7 +22,7 @@ namespace Foodsquare.Controllers
         }
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult Login (string loginUsername, string loginPassword)
+        public ActionResult Login(string loginUsername, string loginPassword)
         {
             UserLogic user = new UserLogic();
 

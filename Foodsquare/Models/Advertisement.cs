@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using LAL;
@@ -7,7 +8,8 @@ using LAL;
 namespace Foodsquare.Models
 {
     public class Advertisement
-    {     
+    {
+        public int id { get; set; }
         public string username { get; set; }
         public int available { get; set; }
         public string description { get; set; }
@@ -30,8 +32,36 @@ namespace Foodsquare.Models
             foreach (AdvertisementLogic listObj in test)
             {
                Advertisement advertisement = new Advertisement();
+               advertisement.id = listObj.id;
                advertisement.username = listObj.username;
                advertisement.available = listObj.available;
+                advertisement.description = listObj.description;
+                advertisement.type = listObj.type;
+                advertisement.amount = listObj.amount;
+                advertisement.weight = listObj.weight;
+                advertisement.expiration = listObj.expiration;
+                advertisement.image = listObj.image;
+                advertisement.name = listObj.name;
+                aList.Add(advertisement);
+            }
+
+            return aList;
+        }
+
+        public List<Advertisement> AdvertisementId(int id)
+        {
+            List<Advertisement> aList = new List<Advertisement>();
+
+            AdvertisementLogic aLogic = new AdvertisementLogic();
+
+            List<AdvertisementLogic> test = aLogic.AdvertisementId(id);
+
+            foreach (AdvertisementLogic listObj in test)
+            {
+                Advertisement advertisement = new Advertisement();
+                advertisement.id = listObj.id;
+                advertisement.username = listObj.username;
+                advertisement.available = listObj.available;
                 advertisement.description = listObj.description;
                 advertisement.type = listObj.type;
                 advertisement.amount = listObj.amount;
