@@ -21,7 +21,22 @@ namespace DAL
             mySqlCommand.Parameters.AddWithValue("@Password", password);
             SqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
             return mySqlDataReader;
+        }
 
+        public DataTable UserCredentials(string username)
+        {
+            Connection Db = new Connection();
+            SqlConnection connection = new SqlConnection(Db.Connect());
+            connection.Open();
+            SqlCommand mySqlCommand = new SqlCommand("GetUser", connection);
+            mySqlCommand.CommandType = CommandType.StoredProcedure;
+            mySqlCommand.Parameters.AddWithValue("@Username", username);
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(mySqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
+            return dataTable;
         }
 
         public void Registration(string username, string password, string city, string zipcode, string phone, string eMail, int online, int admin)

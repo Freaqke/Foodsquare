@@ -12,6 +12,7 @@ namespace Foodsquare.Controllers
         // GET: Account
         public ActionResult Account()
         {
+
             return View();
         }
 
@@ -24,10 +25,10 @@ namespace Foodsquare.Controllers
         {
             var user = Session["username"].ToString();
 
-            Message aModel = new Message();
-            List<Message> aList = aModel.MessageList(user);
+            Message mModel = new Message();
+            List<Message> mList = mModel.MessageList(user);
 
-            ViewBag.messageList = aList;
+            ViewBag.messageList = mList;
 
             return View();
         }

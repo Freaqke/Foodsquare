@@ -28,16 +28,20 @@ namespace Foodsquare.Controllers
 
             bool check = user.UserAuthentication(loginUsername, loginPassword);
 
+        
+
             if (check == true)
             {
                 FormsAuthentication.SetAuthCookie(loginUsername, true);
                 Session["username"] = loginUsername;
+           
                 return RedirectToAction("Index", "Home");
             }
             else
             {
                 ViewData["message"] = "Login Details Failed";
             }
+
             return View();
         }
 

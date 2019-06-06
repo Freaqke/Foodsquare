@@ -13,6 +13,7 @@ namespace Foodsquare.Controllers
         // GET: Message
         public ActionResult Message()
         {
+
             return View();
         }
 

@@ -17,6 +17,7 @@ namespace Foodsquare.Controllers
         // GET: Advertisement
         public ActionResult Advertisement()
         {
+
             return View();
         }
 

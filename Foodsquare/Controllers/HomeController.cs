@@ -22,10 +22,9 @@ namespace Foodsquare.Controllers
 
             ViewBag.ListAdvertisements = advertisements;
 
-            return View(advertisements);
+            ViewBag.userList = ViewBag.userList;
 
-
-           
+            return View();         
         }
 
         public ActionResult About()
@@ -41,8 +40,5 @@ namespace Foodsquare.Controllers
 
             return View();
         }
-
-
-
     }
 }

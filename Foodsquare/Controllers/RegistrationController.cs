@@ -13,6 +13,12 @@ namespace Foodsquare.Controllers
         // GET: Registration
         public ActionResult Registration()
         {
+            if (Session["username"] != null)
+            {
+                User uModel = new User();
+                List<User> uList = uModel.UserList(Session["username"].ToString());
+                ViewBag.userList = uList;
+            }
             return View();
         }
 

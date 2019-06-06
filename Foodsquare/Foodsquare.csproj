@@ -165,6 +165,7 @@
     <Compile Include="Controllers\AdvertisementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
@@ -175,6 +176,7 @@
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Registration.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -267,6 +269,7 @@
     <Content Include="Views\Account\MyAdvertisements.cshtml" />
     <Content Include="Views\Account\MyMessages.cshtml" />
     <Content Include="Views\Message\Message.cshtml" />
+    <Content Include="Views\Management\Management.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
