@@ -83,7 +83,12 @@ namespace Foodsquare.Controllers
                 List<Advertisement> adver = aModel.AdvertisementId(Convert.ToInt32(ids));
                 Session["AdverId"] = adver;
 
-         
+                Comment cModel = new Comment();
+                List<Comment> cList = cModel.CommentId(Convert.ToInt32(ids));
+
+                ViewBag.commentList = cList;
+
+
             return View("Page");
         }
 
@@ -104,8 +109,13 @@ namespace Foodsquare.Controllers
                 {
                     CommentLogic cLogic = new CommentLogic();
                     cLogic.CommentAdd(Convert.ToInt32(AdvertisementId), Session["username"].ToString(),CommentText,DateTime.Now);
-                }
-                return View("Page");
+
+                    Comment cModel = new Comment();
+                    List<Comment> cList = cModel.CommentId(Convert.ToInt32(AdvertisementId));
+
+                    ViewBag.commentList = cList;
+            }
+                return View("Page" );
         }
    }  
 }

@@ -54,9 +54,9 @@ namespace Foodsquare.Models
 
             AdvertisementLogic aLogic = new AdvertisementLogic();
 
-            List<AdvertisementLogic> test = aLogic.AdvertisementId(id);
+            List<AdvertisementLogic> aLogicList = aLogic.AdvertisementId(id);
 
-            foreach (AdvertisementLogic listObj in test)
+            foreach (AdvertisementLogic listObj in aLogicList)
             {
                 Advertisement advertisement = new Advertisement();
                 advertisement.id = listObj.id;
