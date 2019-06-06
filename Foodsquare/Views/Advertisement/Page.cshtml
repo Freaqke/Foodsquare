@@ -25,8 +25,12 @@
             <div class="col-md-4">
                 <div class="card border-secondary mb-3" style="max-width: 20rem;">
 
+                    <div class="card-header" ><row class="row">@item.username  <label type="text" name="AdvertisementId" style="visibility:hidden">@item.id </label> </row>
+                        <row class="row">
+                        <a href="@Url.Action("Message", "Message")">Send private message</a>
+                        </row>
+                        </div>
 
-                    <div class="card-header">@item.username  <label type="text" name="AdvertisementId" style="visibility:hidden">@item.id </label></div>
                     @{
                         var base64 = Convert.ToBase64String(item.image);
                         var imgscr = string.Format("data:image/gif; base64,{0}", base64);
@@ -37,6 +41,7 @@
                     <div class="card-body">
                         <h4 class="card-title">@item.name</h4>
                         <p class="card-text">@item.description</p>
+                     
                     </div>
                 </div>
             </div>

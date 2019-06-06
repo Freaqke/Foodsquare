@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "MyMessages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Messages</h2>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Account", "Account")">Profile</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("MyAdvertisements", "Account")">My Advertisements</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="#messages">My Messages</a>
+    </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active show" id="messages">
+        <p>Messages thhings</p>
+    </div>
+
+</div>
+
+
