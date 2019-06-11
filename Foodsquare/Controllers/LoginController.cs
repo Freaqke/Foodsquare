@@ -24,9 +24,10 @@ namespace Foodsquare.Controllers
         [HttpPost]
         public ActionResult Login(string loginUsername, string loginPassword)
         {
-            UserLogic user = new UserLogic();
 
-            bool check = user.UserAuthentication(loginUsername, loginPassword);
+            ILogin login = new UserLogic();
+    
+            bool check = login.UserAuthentication(loginUsername, loginPassword);
 
         
 

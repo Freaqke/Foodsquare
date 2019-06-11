@@ -2,23 +2,51 @@
 using System.Data;
 using DAL;
 using System.Collections.Generic;
+using System.Dynamic;
 
 
 namespace LAL
 {
-    public class UserLogic
+    public interface ILogin
     {
-       public string username; 
-       public string password;
-       public string city;
-       public string zipcode;
-       public string phone;
-       public string eMail;
-       public int online;
-       public int admin;
+        string username { get; set; }
+        string password { get; set; }
+
+        bool UserAuthentication(string username, string password);
+    }
+
+    public interface IUserRegistration
+    {
+      string username { get; set; }
+      string password { get; set; }
+      string city { get; set; }
+      string zipcode { get; set; }
+      string phone { get; set; }
+      string eMail { get; set; }
+      int online { get; set; }
+      int admin { get; set; }
+
+     void UserRegistration(string username, string password, string city, string zipcode, string phone, string eMail, int online, int admin);
+    }
+
+    public interface IAdminVerification
+    {
+        List<UserLogic> AdminVerification(string username);
+    }
+    public class UserLogic  : ILogin, IUserRegistration
+    {
+       public string username { get; set; }
+       public string password { get; set; }
+       public string city { get; set; }
+       public string zipcode { get; set; }
+       public string phone { get; set; }
+       public string eMail { get; set; }
+       public int online { get; set; }
+       public int admin { get; set; }
 
 
-         public bool UserAuthentication (string username, string password)
+
+         public bool UserAuthentication ( string username, string password)
          {
              UserDb connection = new UserDb();
 

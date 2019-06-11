@@ -8,7 +8,8 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class UserDb
+
+    public class UserDb 
     {
         public SqlDataReader LoginCredentials(string username, string password)
         {

@@ -37,7 +37,7 @@ namespace Foodsquare.Controllers
             }
             else
             {
-                UserLogic user = new UserLogic();
+                IUserRegistration user = new UserLogic();
                 user.UserRegistration(registrationUsername, registrationPassword, registrationCity, registrationZipcode, registrationPhone, registrationEmail, 0, 0);
                 return RedirectToAction("Login", "Login");
             }

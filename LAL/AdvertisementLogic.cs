@@ -7,7 +7,7 @@ using DAL;
 
 namespace LAL
 {
-    public class AdvertisementLogic
+    public class AdvertisementLogic 
     {
         public int id;
         public string username;
@@ -79,6 +79,5 @@ namespace LAL
             }
             return list;
         }
-
     }
 }
