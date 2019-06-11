@@ -20,7 +20,7 @@ namespace Foodsquare.Controllers
         {
             return View();
         }
-
+   
         public ActionResult MyMessages()
         {
             var user = Session["username"].ToString();

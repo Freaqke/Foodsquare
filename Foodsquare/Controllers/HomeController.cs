@@ -22,8 +22,6 @@ namespace Foodsquare.Controllers
 
             ViewBag.ListAdvertisements = advertisements;
 
-            ViewBag.userList = ViewBag.userList;
-
             return View();         
         }
 
