@@ -1,23 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using LAL;
 using DAL;
 using System.Data;
+using Foodsquare.Models;
 
-namespace LAL
+namespace Foodsquare.Tests.LAL
 {
-    public interface IGetMessages
+    [TestClass]
+    public class MessageLogicTests
     {
-         int id { get; set; }
-        string sender { get; set; }
-        string receiver { get; set; }
-         string text { get; set; }
-         DateTime date { get; set; }
-         string title { get; set; }
+        [TestMethod]
+        public void MessagesConfirmed()
+        {
+            List<Message> mList = new List<Message>();
 
-        List<MessageLogic> GetMessageList(string receiver);
+            IGetMessages mLogic = new FakeMessageLogic();
+
+            List<MessageLogic> mLogicList = mLogic.GetMessageList("Admin");
+
+            foreach (MessageLogic listObj in mLogicList)
+            {
+                Message message = new Message();
+                message.id = listObj.id;
+                message.sender = listObj.sender;
+                message.receiver = listObj.receiver;
+                message.text = listObj.text;
+                message.postDate = listObj.date;
+                message.title = listObj.title;
+
+                mList.Add(message);
+            }
+            Assert.IsNotNull(mList);
+        }
     }
-    public class MessageLogic : IGetMessages
+
+    public class FakeMessageLogic : IGetMessages
     {
         public int id { get; set; }
         public string sender { get; set; }
@@ -26,13 +48,7 @@ namespace LAL
         public DateTime date { get; set; }
         public string title { get; set; }
 
-        public void MessageAdd(int id, string sender, string receiver, string text, DateTime date, string title)
-        {
-            MessageDb connection = new MessageDb();
-
-            connection.Add(id, sender,receiver, text, date, title);
-        }
-
+        [TestMethod]
         public List<MessageLogic> GetMessageList(string receiver)
         {
             MessageDb connection = new MessageDb();
@@ -53,6 +69,7 @@ namespace LAL
 
                 list.Add(message);
             }
+
             return list;
         }
     }

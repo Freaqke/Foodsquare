@@ -21,7 +21,7 @@ namespace Foodsquare.Models
         {
             List<Message> mList = new List<Message>();
 
-            MessageLogic mLogic = new MessageLogic();
+            IGetMessages mLogic = new MessageLogic();
 
             List<MessageLogic> mLogicList = mLogic.GetMessageList(receiver);
 
