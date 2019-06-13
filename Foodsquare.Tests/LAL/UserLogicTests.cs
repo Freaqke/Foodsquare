@@ -56,15 +56,16 @@ namespace Foodsquare.Tests.LAL
         [TestMethod]
         public void AdminUnconfirmed()
         {
-            IAdminVerification Admin = new FakeUserLogic();
+            IAdminVerification admin = new FakeUserLogic();
 
-            List<UserLogic> uList = Admin.AdminVerification("User");
+            List<UserLogic> uList = admin.AdminVerification("User");
 
 
             foreach (UserLogic user in uList)
             {
-                int isAdmin = user.admin;
+                var isAdmin = user.admin;
                 Assert.AreEqual(0, isAdmin);
+            
             }
 
         }
@@ -99,7 +100,7 @@ namespace Foodsquare.Tests.LAL
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                UserLogic user = new UserLogic();
+                 UserLogic user = new UserLogic();
                 user.admin = Convert.ToInt32(dr["Admin"]);
                 list.Add(user);
             }

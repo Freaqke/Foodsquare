@@ -10,8 +10,8 @@ namespace DAL
     {
         public void Add(string username, int available, string description)
         {
-            Connection Db = new Connection();
-            SqlConnection connection = new SqlConnection(Db.Connect());
+            Connection db = new Connection();
+            SqlConnection connection = new SqlConnection(db.Connect());
             connection.Open();
             SqlCommand mySqlCommand = new SqlCommand("INSERT INTO [Advertisement] (Username,Available,Description) VALUES (@Username,@Available,@Description)", connection);
             mySqlCommand.Parameters.AddWithValue("@Username", username);
@@ -23,8 +23,8 @@ namespace DAL
 
         public DataTable AdvertisementInformation()
         {
-            Connection Db = new Connection();
-            SqlConnection connection = new SqlConnection(Db.Connect());
+            Connection db = new Connection();
+            SqlConnection connection = new SqlConnection(db.Connect());
             connection.Open();
             SqlCommand mySqlCommand = new SqlCommand("GetAllAdvertisement", connection);
             mySqlCommand.CommandType = CommandType.StoredProcedure;
@@ -37,8 +37,8 @@ namespace DAL
         }
         public DataTable AdvertisementId(int id)
         {
-            Connection Db = new Connection();
-            SqlConnection connection = new SqlConnection(Db.Connect());
+            Connection db = new Connection();
+            SqlConnection connection = new SqlConnection(db.Connect());
             connection.Open();
             SqlCommand mySqlCommand = new SqlCommand("GetAdvertisement", connection);
             mySqlCommand.CommandType = CommandType.StoredProcedure;
