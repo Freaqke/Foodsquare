@@ -16,10 +16,11 @@ namespace Foodsquare.Models
         public string type { get; set; }
         public int amount { get; set; }
         public string weight { get; set; }
-        public DateTime expiration { get; set; }
         public byte[] image { get; set; }
         public string name { get; set; }
         public List<Advertisement> aList { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy.MM.dd}")]
+        public DateTime expiration { get; set; }
 
         public List<Advertisement> GetAllAdvertisements()
         {

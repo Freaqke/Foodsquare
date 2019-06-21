@@ -1,0 +1,48 @@
+﻿@using Foodsquare.Models
+@model Foodsquare.Models.Registration
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card border-secondary mb-3" style="max-width: 20rem;">
+    <div class="card-header">Register</div>
+    <div class="card-body">
+
+        <form action="Register" method="post">
+            <div class="form-group">
+                <label class="col-form-label" for="inputDefault">Username</label>
+                <input type="text" class="form-control" placeholder="Username" name="registrationUsername">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="registrationPassword" placeholder="Password">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label" for="inputDefault">City</label>
+                <input type="text" class="form-control" placeholder="City" name="registrationCity">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label" for="inputDefault">Zipcode</label>
+                <input type="number" class="form-control" placeholder="5000AA" name="registrationZipcode">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label" for="inputDefault">Phonenumber</label>
+                <input type="tel" class="form-control" placeholder="0131234567" name="registrationPhone">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label" for="inputDefault">Email</label>
+                <input type="email" class="form-control" placeholder="Example@example.com" name="registrationEmail">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <h2> @Html.ViewData["message"]</h2>
+</div>
+

@@ -3,39 +3,43 @@
     ViewBag.Title = "MyMessages";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<form action="CommentAdd" method="post">
+    <h2>My Messages</h2>
 
-<h2>My Messages</h2>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("Account", "Account")">Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("MyAdvertisements", "Account")">My Advertisements</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#messages">My Messages</a>
+        </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active show" id="messages">
+         
+        </div>
 
-<ul class="nav nav-tabs">
-    <li class="nav-item">
-        <a class="nav-link" href="@Url.Action("Account", "Account")">Profile</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="@Url.Action("MyAdvertisements", "Account")">My Advertisements</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active" href="#messages">My Messages</a>
-    </li>
-</ul>
-<div id="myTabContent" class="tab-content">
-    <div class="tab-pane fade active show" id="messages">
-        <p>Messages thhings</p>
     </div>
-
-</div>
-
-@foreach (Message message in ViewBag.messageList)
-{
+<form action="ReturnMessage" method="post">
+    @foreach (Message message in ViewBag.messageList)
+    {
     <div class="list-group">
         <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-         <p class="text-info">@message.title</p>
-                <small class="text-muted">@Html.DisplayFor(modelItem => message.postDate )</small>
+                <p class="text-info">@message.title</p>
+                <small class="text-muted">@Html.DisplayFor(modelItem => message.postDate)</small>
             </div>
             <p class="mb-1">@message.text</p>
-            <small class="text-muted">@message.sender</small>
+            <small class="text-muted" >@message.sender</small>
         </a>
+        <a href="@Url.Action("ReturnMessage",new {receiver = message.sender})">Send private message</a>
+        
+
     </div>
-}
+    }
+    </form>
 
-
+    </form>

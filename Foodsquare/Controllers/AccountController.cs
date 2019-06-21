@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Foodsquare.Models;
+using LAL;
 
 namespace Foodsquare.Controllers
 {
@@ -20,7 +21,7 @@ namespace Foodsquare.Controllers
         {
             return View();
         }
-   
+
         public ActionResult MyMessages()
         {
             var user = Session["username"].ToString();
@@ -32,6 +33,24 @@ namespace Foodsquare.Controllers
 
             return View();
         }
+        [HttpPost]
+        public ActionResult ReturnMessage(string receiver)
 
+        {
+            Advertisement aModel = new Advertisement();
+            aModel.username = receiver;
+            aModel.id = 0;
+            Session["AdverId"] = null;
+
+            List<Advertisement> adver = new List<Advertisement>();
+
+            adver.Add(aModel);
+
+
+            Session["AdverId"] = adver;
+
+            return RedirectToAction("Message", "Message");
+
+        }
     }
 }
